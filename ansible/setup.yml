@@ -1,0 +1,11 @@
+---
+- name: Configure DevOps Server
+  hosts: servers
+  become: yes
+
+  tasks:
+    - name: Install Docker
+      raw: yum install -y docker
+
+    - name: Start and enable Docker
+      raw: systemctl enable --now docker
